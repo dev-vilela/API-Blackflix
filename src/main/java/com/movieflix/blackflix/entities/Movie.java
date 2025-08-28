@@ -19,18 +19,20 @@ public class Movie {
     private String genre;
     private Integer year;
     private Double rating;
+    private String image;
     private String youtubeUrl;
 
     public  Movie(){
 
     }
 
-    public Movie(Long id, String title, String genre, Integer year, Double rating, String youtubeUrl) {
+    public Movie(Long id, String title, String genre, Integer year, Double rating,String image , String youtubeUrl) {
         this.id = id;
         this.title = title;
         this.genre = genre;
         this.year = year;
         this.rating = rating;
+        this.image = image;
         this.youtubeUrl = youtubeUrl;
     }
 
@@ -72,6 +74,14 @@ public class Movie {
 
     public void setRating(Double rating) {
         this.rating = rating;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public String getYoutubeUrl() {
