@@ -15,9 +15,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController // Controlador REST que expõe os endpoints
-@RequestMapping("/movies")// Define  a rota base /movies
-@CrossOrigin(origins = "*", allowCredentials = "false")
+//@RestController // Controlador REST que expõe os endpoints
+//@RequestMapping("/movies")// Define  a rota base /movies
+//@CrossOrigin(origins = "*", allowCredentials = "false")
+@CrossOrigin(origins = "*")
+@RestController
+@RequestMapping("/movies")
 public class MovieController {
 
     @Autowired
