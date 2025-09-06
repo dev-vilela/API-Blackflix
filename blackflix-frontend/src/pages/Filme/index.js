@@ -81,11 +81,11 @@ function Filme() {
       </div>
 
       <h2>Sinopse</h2>
-      <span>{filme.overview}</span>
+      <span>{filme.sinopse}</span>
 
-      <strong>Avaliação: {filme.rating} / 10</strong> 
-      <strong>Ano de lançamento: {filme.year} </strong>
-
+      <strong>Gênero: {filme.genre} | <strong> Avaliação: {filme.rating} / 10</strong> |    <strong>Ano de lançamento: {filme.year} </strong>  </strong>  
+     
+   
       <div className='area-btn'>
         <button onClick={salvarFilme}>Salvar</button>
         <Link to='/' className='btn-voltar'>Voltar</Link>

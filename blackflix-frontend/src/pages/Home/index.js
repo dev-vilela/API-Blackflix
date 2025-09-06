@@ -14,12 +14,11 @@ function Home() {
         setFilmes(response.data);
       } catch (error) {
         console.error("Erro ao carregar filmes:", error);
-        setFilmes([]); // fallback
+        setFilmes([]); 
       } finally {
         setLoading(false);
       }
     }
-
     loadFilmes();
   }, []);
 
@@ -31,23 +30,49 @@ function Home() {
     );
   }
 
+  // Pegar o primeiro filme como destaque
+  const destaque = filmes[0];
+  const outrosFilmes = filmes.slice(1);
+
   return (
-    <div className="container">
+    <div className="home-container">
+      {/* FILME EM DESTAQUE */}
+      {destaque && (
+        <div
+          className="banner"
+          style={{ backgroundImage: `url(${destaque.image})` }}
+        >
+          <div className="banner-content">
+            <h1>{destaque.title}</h1>
+            <p>{destaque.sinopse?.slice(0, 150)}...</p>
+            <div className="banner-buttons">
+              <Link to={`/filme/${destaque.id}`} className="btn assistir">
+                ▶ Assistir
+              </Link>
+              <button className="btn info">ℹ Mais informações</button>
+            </div>
+          </div>
+          <div className="banner-fade"></div>
+        </div>
+      )}
+
+      {/* LISTA DE FILMES EM CARROSSEL */}
       <div className="lista-filmes">
-        {filmes.map((filme) => (
-          <article key={filme.id}>
-            <strong>{filme.title}</strong>
-            {/* <img
-              src={`https://image.tmdb.org/t/p/w500/${filme.image}`}
-              alt={filme.title}
-            /> */}
-            <img src={filme.image} alt={filme.title} />
-            
-            <Link to={`/filme/${filme.id}`}>Acessar</Link>
-          </article>
-        ))}
+        <h2>Filmes populares</h2>
+        <div className="filmes-row">
+          {outrosFilmes.map((filme) => (
+            <div key={filme.id} className="filme-card">
+              <img src={filme.image} alt={filme.title} />
+              <div className="overlay">
+                <p>{filme.title}</p>
+                <Link to={`/filme/${filme.id}`} className="btn-card">Ver</Link>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
+    
   );
 }
 

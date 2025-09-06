@@ -16,6 +16,7 @@ public class Movie {
     private Long id;
 
     private String title;
+    private String sinopse;
     private String genre;
     private Integer year;
     private Double rating;
@@ -26,9 +27,10 @@ public class Movie {
 
     }
 
-    public Movie(Long id, String title, String genre, Integer year, Double rating,String image , String youtubeUrl) {
+    public Movie(Long id, String title,String sinopse, String genre, Integer year, Double rating,String image , String youtubeUrl) {
         this.id = id;
         this.title = title;
+        this.sinopse = sinopse;
         this.genre = genre;
         this.year = year;
         this.rating = rating;
@@ -50,6 +52,14 @@ public class Movie {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getSinopse() {
+        return sinopse;
+    }
+
+    public void setSinopse(String sinopse) {
+        this.sinopse = sinopse;
     }
 
     public String getGenre() {
