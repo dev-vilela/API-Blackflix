@@ -50,8 +50,6 @@ Esse projeto foi desenvolvido com foco em **aprendizado de React, integração c
 - ☕ **Java + Spring Boot** (API REST de filmes)
 - 🗄️ Spring Data JPA (persistência de dados)
 - 🐘 **PostgreSQL** (banco de dados principal)
-- ▶️ Campo **url** para assistir trailers no **YouTube**
-- ✍️ Campo extra **sinopse** incluído
 
 ---
 
