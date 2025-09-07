@@ -132,3 +132,50 @@ body {
   font-size: 0.9rem;
   border-radius: 4px;
 }
+
+
+/*--------------*/
+
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.arrow {
+  position: absolute;
+  top: 40%;
+  z-index: 10;
+  background: rgba(20, 20, 20, 0.6);
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+.arrow:hover {
+  background: rgba(229, 9, 20, 0.9);
+}
+
+.arrow.left {
+  left: 0;
+}
+
+.arrow.right {
+  right: 0;
+}
+
+.filmes-row {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  padding: 20px 40px;
+  scroll-behavior: smooth;
+}
+
+.filmes-row::-webkit-scrollbar {
+  display: none;
+}
